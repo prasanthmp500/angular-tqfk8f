@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as d3 from 'd3';
 import { HistogramDistribution } from './model';
+import { data } from './test-data'
 
 @Component({
   selector: 'app-root',
@@ -13,14 +14,8 @@ export class AppComponent implements OnInit {
 ngOnInit() {
 console.log(d3);
 
-const hist: HistogramDistribution[] = [ 
-    { "dateRange" : "2019-12-11" ,total: 450, delivered : 200, undeliverable:150, enroute:25, expired:75},
-    { "dateRange" : "2019-12-12" ,total: 1000, delivered : 300, undeliverable:250, enroute:300,expired:150},
-    { "dateRange" : "2019-12-13" ,total: 3000, delivered : 2000, undeliverable:100, enroute:900,expired:0},
-    { "dateRange" : "2019-12-14" ,total: 5500, delivered : 3500, undeliverable:500, enroute:500,expired:1000},
-    { "dateRange" : "2019-12-15" ,total: 5000, delivered : 2000, undeliverable:1000, enroute:1500,expired:500},
-    { "dateRange" : "2019-12-16" ,total: 2000, delivered : 1000, undeliverable:150, enroute:50,expired:800},
-    { "dateRange" : "2019-12-17" ,total: 450, delivered : 150, undeliverable:150, enroute:100,expired:50}];
+const hist: HistogramDistribution[] = data;
+  
 
 this.drawSvg(hist);
 
